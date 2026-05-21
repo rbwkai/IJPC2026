@@ -52,16 +52,3 @@ int main()
 
 </details>
 </details>
-
-<details>
-<summary>Alternate Solution</summary>
-
-<details>
-<summary>Code</summary>
-
-```cpp
-
-```
-
-</details>
-</details>
