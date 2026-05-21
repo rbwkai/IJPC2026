@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# Still a Group Project??
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [MD. Mahiul Kabir](https://codeforces.com/profile/rbwkai)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 1200
 
-Tag(s): Number Theory
+Tag(s): Greedy, Implementation
 
 <details>
 <summary>Hint</summary>

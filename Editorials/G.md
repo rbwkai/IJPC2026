@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# Moushi Is In Trouble
 
 Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
 
 Estimated Difficulty: 900
 
-Tag(s): Number Theory
+Tag(s): Math
 
 <details>
 <summary>Hint</summary>

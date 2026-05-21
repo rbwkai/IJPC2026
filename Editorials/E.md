@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# AutoCAD Mayhem
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Mishkat Ahmed](https://codeforces.com/profile/C01d)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 800
 
-Tag(s): Number Theory
+Tag(s): Geometry
 
 <details>
 <summary>Hint</summary>

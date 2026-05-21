@@ -1,8 +1,10 @@
 # Iris Out
 
-Problem Setter: [Rafio](https://codeforces.com/profile/Rafio)  
-Estimated Difficulty: 800  
-Tags: Ad-hoc, Graphs
+Problem Setter: [Rafio](https://codeforces.com/profile/Rafio)
+
+Estimated Difficulty: 800
+
+Tag(s): Ad-hoc, Graphs
 
 <details>
 <summary>Hint</summary>

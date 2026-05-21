@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# XORnacci
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Jannatul Fardus Rakhi](https://codeforces.com/profile/sectumsemprra)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 1200
 
-Tag(s): Number Theory
+Tag(s): Bitmasks
 
 <details>
 <summary>Hint</summary>

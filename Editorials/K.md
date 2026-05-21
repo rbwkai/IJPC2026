@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# Power of Friendship
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Syed Rifat Raiyan](https://codeforces.com/profile/Starscream-11813)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 1100
 
-Tag(s): Number Theory
+Tag(s): Geometry
 
 <details>
 <summary>Hint</summary>

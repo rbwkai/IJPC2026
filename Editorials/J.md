@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# The Grand Fleet’s Logbook
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Saom Bin Khaled](https://codeforces.com/profile/greenbinjack)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 1400
 
-Tag(s): Number Theory
+Tag(s): Implementation
 
 <details>
 <summary>Hint</summary>

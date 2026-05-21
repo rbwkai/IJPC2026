@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# Glass Bridge
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Nayeem Hossain Ahad](https://codeforces.com/profile/flying_saucer)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 1400
 
-Tag(s): Number Theory
+Tag(s): Probability
 
 <details>
 <summary>Hint</summary>

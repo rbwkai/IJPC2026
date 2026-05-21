@@ -1,10 +1,8 @@
-# Glorious Batch-24!
+# Unf-AI-r Task
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Reaz Hassan Joarder](https://codeforces.com/profile/ssshanto)
 
-Estimated Difficulty: 900
-
-Tag(s): Number Theory
+Tag(s): Giveaway
 
 <details>
 <summary>Hint</summary>

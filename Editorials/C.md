@@ -1,10 +1,10 @@
-# Glorious Batch-24!
+# Strong Password
 
-Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
+Problem Setter: [Md. Wasi Ul Habib](https://codeforces.com/profile/CodingPariNaa)
 
-Estimated Difficulty: 900
+Estimated Difficulty: 1400
 
-Tag(s): Number Theory
+Tag(s): Constructive, Number Theory
 
 <details>
 <summary>Hint</summary>
