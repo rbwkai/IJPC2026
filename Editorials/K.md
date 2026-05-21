@@ -8,7 +8,7 @@ Tag(s): Geometry
 
 <details>
 <summary>Hint</summary>
-
+Hint
 </details>
 
 <details>
