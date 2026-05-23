@@ -8,7 +8,8 @@ Tag(s): Greedy, Implementation
 
 <details>
 <summary>Solution</summary>
-The problem asks whether we can transform an initial array $a$ into a target array $b$ by swapping elements that are exactly $m$ indices apart. This is a trivial problem involving **independent equivalence classes** created by a fixed step size.
+
+The problem asks whether we can transform an initial array $a$ into a target array $b$ by swapping elements that are exactly $m$ indices apart.
 
 When you can only swap elements at positions $i$ and $i+m$, an element at index $i$ can only ever move to $i \pm m$, $i \pm 2m$, $i \pm 3m$, and so on. In other words, the array is partitioned into $m$ completely independent groups based on the index modulo $m$ ($i \pmod m$). 
 
