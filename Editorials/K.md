@@ -38,7 +38,7 @@ Code
 
 The problem is taken from the final exam of [Assassination Classroom, Season 2, Episode 12](https://www.youtube.com/watch?v=IsTMsq5EVbU).
 
-This is a beautiful episode where a math problem is connected directly to the themes of a story. Assassination Classroom is a quite an absurd anime in general, the context of this problem can be easily explained.
+This is a beautiful episode where a math problem is connected directly to the themes of a story. Although Assassination Classroom is a quite an absurd anime in general, the context of this problem can be easily explained.
 
 **SPOILER ALERT!**
 
