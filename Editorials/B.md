@@ -30,7 +30,6 @@ The repeating zone spans from index $m-1$ to $n$, containing $K = n - m + 2$ ele
 * **If $R = 1$**: Exactly one element ($a_{m-1}$) is left over. The final answer is $\left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1} = \bigoplus_{i=1}^{m-1} a_i$.
 * **If $R = 2$**: Two elements ($a_{m-1} \oplus a_m$) are left over. The final answer is $\left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1} \oplus a_m = \bigoplus_{i=1}^{m} a_i$.
 
-By computing a standard prefix XOR array $P$ where $P[i] = a_1 \oplus \dots \oplus a_i$, we can answer each query in $\mathcal{O}(1)$ time after an $\mathcal{O}(m)$ preprocessing step.
 <details>
 <summary>Code</summary>
 
