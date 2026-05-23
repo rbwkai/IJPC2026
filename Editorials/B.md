@@ -18,63 +18,36 @@ Use these properties of XOR:
 <details>
 <summary>Solution</summary>
 
-The sequence is extended using the rule $a_i = a_{i-2} \oplus a_{i-1}$ for $i > m$. Let’s examine the first few terms after the given elements:
+The sequence is extended using the rule $a_i = a_{i-2} \oplus a_{i-1}$ for $i > m$. Let’s check the first few terms after the given elements:
 
 - $a_{m+1} = a_{m-1} \oplus a_m$
 - $a_{m+2} = a_m \oplus a_{m+1} = a_m \oplus (a_{m-1} \oplus a_m) = a_{m-1}$
 - $a_{m+3} = a_{m+1} \oplus a_{m+2} = (a_{m-1} \oplus a_m) \oplus a_{m-1} = a_m$
 - $a_{m+4} = a_{m+2} \oplus a_{m+3} = a_{m-1} \oplus a_m$
 
-From index $m-1$ onward, the sequence repeats with period $3$:
+We can observe that from index $m-1$ onward, the sequence repeats with period $3$. So the entire sequence is:  
+$\displaystyle a_1, \dots, a_{m-2}, \underbrace{a_{m-1},\ a_m,\ (a_{m-1}\oplus a_m),\ a_{m-1},\ a_m,\ (a_{m-1}\oplus a_m),\ \dots}_{\text{period }3}$
 
-$$
-a_1, \dots, a_{m-2},
-\underbrace{
-a_{m-1},\ a_m,\ (a_{m-1} \oplus a_m),\
-a_{m-1},\ a_m,\ (a_{m-1} \oplus a_m),\ \dots
-}_{\text{period }3}
-$$
+Let a complete block be three consecutive elements of the repeating portion of the sequence. The XOR of one full block is $a_{m-1}\oplus a_m\oplus(a_{m-1}\oplus a_m)=0$.
 
-The XOR of one full block is:
+Therefore, every complete block contributes nothing to the total XOR sum, and we only need to consider the first $m-2$ elements and the final incomplete block.
 
-$$
-a_{m-1} \oplus a_m \oplus (a_{m-1} \oplus a_m) = 0
-$$
+The repeating section runs from index $m-1$ through $n$, so it contains $K=n-m+2$ elements. Let $R=K \bmod 3$. This is the size of the final incomplete block.
 
-Therefore, every complete block contributes nothing to the total XOR sum, and we only need to consider the final incomplete block.
+- If $R = 0$: all elements form complete blocks, so they cancel out. The final answer is the XOR of the first $m-2$ elements:  
+  $\displaystyle \bigoplus_{i=1}^{m-2} a_i$
 
-The repeating section runs from index $m-1$ through $n$, so it contains $K = n - m + 2$ elements. Let $R = K \bmod 3$.
+  ![R0](./img/XORnacci-Diagram-0.png "R = 0")
 
-- **If $R = 0$**: all elements form complete blocks, so they cancel out.  
-  The final answer is the XOR of the first $m - 2$ elements, which is:
+- If $R = 1$: one extra element $a_{m-1}$ remains. The final answer is  
+  $\displaystyle \left(\bigoplus_{i=1}^{m-2} a_i\right)\oplus a_{m-1}=\bigoplus_{i=1}^{m-1} a_i$
 
-  $$
-  \bigoplus_{i=1}^{m-2} a_i
-  $$
+  ![R1](./img/XORnacci-Diagram-1.png "R = 1")
 
-  ![R0](./img/XORnacci-Diagram-0.png 'R = 0')
-
-- **If $R = 1$**: one extra element $a_{m-1}$ remains.  
-  The final answer is:
-
-  $$
-  \left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1}
-  =
-  \bigoplus_{i=1}^{m-1} a_i
-  $$
-
-  ![R1](./img/XORnacci-Diagram-1.png 'R = 1')
-
-- **If $R = 2$**: two extra elements $a_{m-1}$ and $a_m$ remain.  
-  The final answer is:
-
-  $$
-  \left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1} \oplus a_m
-  =
-  \bigoplus_{i=1}^{m} a_i
-  $$
-
-  ![R2](./img/XORnacci-Diagram-2.png 'R = 2')
+- If $R = 2$: two extra elements $a_{m-1}$ and $a_m$ remain. The final answer is  
+  $\displaystyle \left(\bigoplus_{i=1}^{m-2} a_i\right)\oplus a_{m-1}\oplus a_m=\bigoplus_{i=1}^{m} a_i$
+  
+  ![R2](./img/XORnacci-Diagram-2.png "R = 2")
 
 <details>
 <summary>Code</summary>
