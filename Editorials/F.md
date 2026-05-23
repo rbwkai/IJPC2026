@@ -66,15 +66,15 @@ ll const inf = 1e18; //0x3f3f3f3f3f3f;
 ll const mod = 1e9+7; //998244353;
 
 void solve(){
-  ll n, k; cin>>n>>k;
+  ll n, k; cin>>n>>k; 
   vi a(n); fir(n) cin>>a[i];
-  vi b(n); fir(n) cin>>b[i];
+  vi b(n); fir(n) cin>>b[i];                      //taking input
 
-  grid ga(k), gb(k);
-  fir(n) ga[i%k].pb(a[i]), gb[i%k].pb(b[i]);
-  fir(k) sort(all(ga[i])), sort(all(gb[i]));
+  grid ga(k), gb(k);                              //2d arrays for separating each independent class
+  fir(n) ga[i%k].pb(a[i]), gb[i%k].pb(b[i]);      //populating based on index modulo k.
+  fir(k) sort(all(ga[i])), sort(all(gb[i]));      //sorting independent classes to check if they're equal.
 
-  boolret(ga==gb);
+  boolret(ga==gb);                                //prints "Yes" if passed boolen is true, "No" otherwise, and returns.
 }
 
 int main(){
