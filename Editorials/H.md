@@ -6,12 +6,12 @@ Tag(s): Giveaway
 
 <details>
 <summary>Hint</summary>
-
+Read the statement carefully.
 </details>
 
 <details>
 <summary>Solution</summary>
-
+"I ate 76987266 apples ***yesterday***"
 <details>
 <summary>Code</summary>
 
@@ -29,7 +29,7 @@ void pre()
 
 void solve(int tc)
 {
-
+    cout<<178632754<<"\n"
 }
 
 int main()
@@ -37,7 +37,7 @@ int main()
     pre();
 
     int tc, tt = 1;
-    cin >> tt;
+    //cin >> tt;
 
     for(tc = 1; tc <= tt; tc++)
     {
