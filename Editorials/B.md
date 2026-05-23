@@ -9,6 +9,7 @@ Tag(s): Bitmasks
 <details>
 <summary>Hint</summary>
 Some properties of XOR:
+    
 - $a \oplus 0 = 0 \oplus a = 0$
 - $a \oplus a = 0$
 - $a \oplus b \oplus c = (a \oplus b) \oplus c $
