@@ -7,8 +7,18 @@ Estimated Difficulty: 1200
 Tag(s): Bitmasks
 
 <details>
-<summary>Hint</summary>
-A special property of XOR: $a \oplus a = 0$
+<summary>Hint 1</summary>
+A special property of XOR: $a \oplus 0 = 0 \oplus a = 0$
+</details>
+
+<details>
+<summary>Hint 2</summary>
+$a \oplus a = 0$
+</details>
+
+<details>
+<summary>Hint 3</summary>
+$a \oplus b \oplus c = (a \oplus b) \oplus c $
 </details>
 
 <details>
