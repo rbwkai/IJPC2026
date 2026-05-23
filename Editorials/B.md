@@ -8,75 +8,126 @@ Tag(s): Bitmasks
 
 <details>
 <summary>Hint</summary>
-Some properties of XOR:
-    
-- $a \oplus 0 = 0 \oplus a = 0$
+Use these properties of XOR:
+
+- $a \oplus b = b \oplus a $
+- $a \oplus 0 = 0$
 - $a \oplus a = 0$
-- $a \oplus b \oplus c = (a \oplus b) \oplus c $
 </details>
 
 <details>
 <summary>Solution</summary>
-The sequence is extended using the rule $a_i = a_{i-2} \oplus a_{i-1}$ for $i > m$. Let's examine the terms immediately following the given elements:
-    
+
+The sequence is extended using the rule $a_i = a_{i-2} \oplus a_{i-1}$ for $i > m$. Let’s examine the first few terms after the given elements:
+
 - $a_{m+1} = a_{m-1} \oplus a_m$
 - $a_{m+2} = a_m \oplus a_{m+1} = a_m \oplus (a_{m-1} \oplus a_m) = a_{m-1}$
 - $a_{m+3} = a_{m+1} \oplus a_{m+2} = (a_{m-1} \oplus a_m) \oplus a_{m-1} = a_m$
 - $a_{m+4} = a_{m+2} \oplus a_{m+3} = a_{m-1} \oplus a_m$
 
-Starting from index $m-1$, the sequence traps itself into a repeating cycle of length 3: 
-$$\dots, a_{m-1}, \ a_m, \ (a_{m-1} \oplus a_m), \ a_{m-1}, \ a_m, \ (a_{m-1} \oplus a_m), \ \dots$$
+From index $m-1$ onward, the sequence repeats with period $3$:
 
-The total XOR sum of any single full block of 3 elements in this cycle is $a_{m-1} \oplus a_m \oplus (a_{m-1} \oplus a_m) = 0$. Because full blocks contribute nothing to the total XOR sum, we only need to track the leftover elements at the end of the sequence.
+$$
+a_1, \dots, a_{m-2},
+\underbrace{
+a_{m-1},\ a_m,\ (a_{m-1} \oplus a_m),\
+a_{m-1},\ a_m,\ (a_{m-1} \oplus a_m),\ \dots
+}_{\text{period }3}
+$$
 
-The repeating zone spans from index $m-1$ to $n$, containing $K = n - m + 2$ elements. We find the remainder $R = K \pmod 3$:
-* **If $R = 0$**: The repeating zone forms complete blocks of 3. They all cancel out to $0$. The final answer is the prefix sum up to $m-2$: $\bigoplus_{i=1}^{m-2} a_i$.
-* **If $R = 1$**: Exactly one element ($a_{m-1}$) is left over. The final answer is $\left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1} = \bigoplus_{i=1}^{m-1} a_i$.
-* **If $R = 2$**: Two elements ($a_{m-1} \oplus a_m$) are left over. The final answer is $\left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1} \oplus a_m = \bigoplus_{i=1}^{m} a_i$.
+The XOR of one full block is:
+
+$$
+a_{m-1} \oplus a_m \oplus (a_{m-1} \oplus a_m) = 0
+$$
+
+Therefore, every complete block contributes nothing to the total XOR sum, and we only need to consider the final incomplete block.
+
+The repeating section runs from index $m-1$ through $n$, so it contains $K = n - m + 2$ elements. Let $R = K \bmod 3$.
+
+- **If $R = 0$**: all elements form complete blocks, so they cancel out.  
+  The final answer is the XOR of the first $m - 2$ elements, which is:
+
+  $$
+  \bigoplus_{i=1}^{m-2} a_i
+  $$
+
+  ![R0](./img/XORnacci-Diagram-0.png 'R = 0')
+
+- **If $R = 1$**: one extra element $a_{m-1}$ remains.  
+  The final answer is:
+
+  $$
+  \left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1}
+  =
+  \bigoplus_{i=1}^{m-1} a_i
+  $$
+
+  ![R1](./img/XORnacci-Diagram-1.png 'R = 1')
+
+- **If $R = 2$**: two extra elements $a_{m-1}$ and $a_m$ remain.  
+  The final answer is:
+
+  $$
+  \left(\bigoplus_{i=1}^{m-2} a_i\right) \oplus a_{m-1} \oplus a_m
+  =
+  \bigoplus_{i=1}^{m} a_i
+  $$
+
+  ![R2](./img/XORnacci-Diagram-2.png 'R = 2')
 
 <details>
 <summary>Code</summary>
 
 ```cpp
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-void solve() {
-    long long n, m;
-    cin >> n >> m;
-    
-    vector<long long> P(m + 1, 0);
-    for (int i = 1; i <= m; ++i) {
-        long long val;
-        cin >> val;
-        P[i] = P[i - 1] ^ val;
-    }
-    
-    long long K = n - m + 2;
-    int R = K % 3;
-    
-    if (R == 0) {
-        cout << (m - 2 >= 1 ? P[m - 2] : 0) << "\n";
-    } else if (R == 1) {
-        cout << P[m - 1] << "\n";
-    } else {
-        cout << P[m] << "\n";
-    }
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0)
+using LL = long long;
+
+void pre()
+{
+    fastio;
 }
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t;
-    cin >> t;
-    while (t--) solve();
+void solve(int tc)
+{
+    int i, n, m;
+    cin >> n >> m;
+
+    vector<int> v(m + 1);
+    for(i = 1; i <= m; i++) cin >> v[i];
+
+    vector<int> prefXor(m + 1);
+    prefXor[0] = 0;
+    for(i = 1; i <= m; i++) prefXor[i] = prefXor[i - 1] ^ v[i];
+
+    int K = n - m + 2;
+    int R = K % 3;
+
+    if(R == 0) cout << prefXor[m - 2];
+    else if(R == 1) cout << prefXor[m - 1];
+    else cout << prefXor[m];
+}
+
+int main()
+{
+    pre();
+
+    int tc, tt = 1;
+    cin >> tt;
+
+    for(tc = 1; tc <= tt; tc++)
+    {
+        // cout << "Case " << tc << ": ";
+        solve(tc);
+        cout << '\n';
+    }
+
     return 0;
 }
 ```
 
 </details>
 </details>
-
-
