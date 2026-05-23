@@ -29,60 +29,60 @@ Thus, a valid transformation from $a$ to $b$ is possible if and only if, for eve
 <summary>Code</summary>
 
 ```cpp
-//#pragma GCC optimize("Ofast,unroll-loops")
-//#pragma GCC target("avx2,popcnt,lzcnt,abm,bmi,bmi2,fma,tune=native")
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
-#include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
+void solve() {
+    long long n, k; 
+    std::cin >> n >> k; 
+    
+    std::vector<long long> a(n); 
+    for (int i = 0; i < n; ++i) {
+        std::cin >> a[i];
+    }
+    
+    std::vector<long long> b(n); 
+    for (int i = 0; i < n; ++i) {
+        std::cin >> b[i];
+    }
 
-using namespace std;
-using namespace __gnu_pbds;
-using ll = long long;
-using vi = vector<ll>;
-using pi = pair<ll, ll>;
-using grid = vector<vi>;
- 
-template<class T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, 
-                         tree_order_statistics_node_update>; 
-#define en "\n"
-#define ln " \n"[i==n-1]
-#define F first
-#define S second
-#define pb push_back
-#define all(_O) _O.begin(), _O.end() 
-#define rall(_O) _O.rbegin(), _O.rend() 
-#define badret return void(cout<<-1<<en)
-#define boolret(_O) return void(cout<<(_O? "Yes":"No")<<en) 
-#define fir(_O) for(int i=0, ii=(_O)-1; i<(_O); ++i, --ii)
-#define fjr(_O) for(int j=0, jj=(_O)-1; j<(_O); ++j, --jj)
+    // 2D vectors for separating elements into independent congruence classes
+    std::vector<std::vector<long long>> ga(k);
+    std::vector<std::vector<long long>> gb(k);
+    
+    // Populate based on index modulo k
+    for (int i = 0; i < n; ++i) {
+        ga[i % k].push_back(a[i]);
+        gb[i % k].push_back(b[i]);
+    }
+    
+    // Sort independent classes to check if they contain the exact same elements
+    for (int i = 0; i < k; ++i) {
+        std::sort(ga[i].begin(), ga[i].end());
+        std::sort(gb[i].begin(), gb[i].end());
+    }
 
-
-
-// 一心不乱
-ll const N = 2e6+6;
-ll const inf = 1e18; //0x3f3f3f3f3f3f;
-ll const mod = 1e9+7; //998244353;
-
-void solve(){
-  ll n, k; cin>>n>>k; 
-  vi a(n); fir(n) cin>>a[i];
-  vi b(n); fir(n) cin>>b[i];                      //taking input
-
-  grid ga(k), gb(k);                              //2d arrays for separating each independent class
-  fir(n) ga[i%k].pb(a[i]), gb[i%k].pb(b[i]);      //populating based on index modulo k.
-  fir(k) sort(all(ga[i])), sort(all(gb[i]));      //sorting independent classes to check if they're equal.
-
-  boolret(ga==gb);                                //prints "Yes" if passed boolen is true, "No" otherwise, and returns.
+    // Direct comparison of 2D vectors and conditional output
+    if (ga == gb) {
+        std::cout << "Yes\n";
+    } else {
+        std::cout << "No\n";
+    }
 }
 
-int main(){
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);
+int main() {
+    // Optimize standard I/O operations for performance
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int tt = 1; cin>>tt;
-  fir(tt) solve();
+    int tt = 1; 
+    std::cin >> tt;
+    for (int i = 0; i < tt; ++i) {
+        solve();
+    }
+    
+    return 0;
 }
 ```
 </details>
