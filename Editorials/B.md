@@ -7,23 +7,16 @@ Estimated Difficulty: 1200
 Tag(s): Bitmasks
 
 <details>
-<summary>Hint 1</summary>
-A special property of XOR: $a \oplus 0 = 0 \oplus a = 0$
-</details>
-
-<details>
-<summary>Hint 2</summary>
-$a \oplus a = 0$
-</details>
-
-<details>
-<summary>Hint 3</summary>
-$a \oplus b \oplus c = (a \oplus b) \oplus c $
+<summary>Hint</summary>
+Some properties of XOR:
+- $a \oplus 0 = 0 \oplus a = 0$
+- $a \oplus a = 0$
+- $a \oplus b \oplus c = (a \oplus b) \oplus c $
 </details>
 
 <details>
 <summary>Solution</summary>
-The sequence is extended using the rule $a_i = a_{i-2} \oplus a_{i-1}$ for $i > m$. Let's examine the terms immediately following the given elements to find a pattern:
+The sequence is extended using the rule $a_i = a_{i-2} \oplus a_{i-1}$ for $i > m$. Let's examine the terms immediately following the given elements:
     
 - $a_{m+1} = a_{m-1} \oplus a_m$
 - $a_{m+2} = a_m \oplus a_{m+1} = a_m \oplus (a_{m-1} \oplus a_m) = a_{m-1}$
