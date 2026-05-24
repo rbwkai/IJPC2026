@@ -11,7 +11,7 @@ Tag(s): Greedy, Implementation
 
 The problem asks whether we can transform an initial array $a$ into a target array $b$ by swapping elements that are exactly $m$ indices apart.
 
-When you can only swap elements at positions $i$ and $i+m$, an element at index $i$ can only ever move to $i \pm m$, $i \pm 2m$, $i \pm 3m$, and so on. In other words, the array is partitioned into $m$ completely independent groups based on the index modulo $m$ ($i \pmod m$). 
+When you can only swap elements at positions $i$ and $i+m$, an element at index $i$ can only ever move to $i \pm m$, $i \pm 2m$, $i \pm 3m$, and so on. In other words, the array is divided into $m$ completely independent groups based on the index modulo $m$ ($i \pmod m$). 
 
 For example, if $m=3$:
 * Elements at positions $0, 3, 6, 9 \dots$ can swap with each other.
@@ -86,5 +86,13 @@ int main() {
     return 0;
 }
 ```
+</details>
+
+<details>
+<summary>Cool Alt solution</summary>
+Create an array of pairs for each arrangement, where the first element of the pair is the value of the array, and the second element is the *group number* of that element, i.e., index modulo $m$ ($i \pmod m$), then sort (with any transitive comparator of your choice!). Check for the final array becomes same for both $a$ and $b$. *But, why this works?* 
+
+Kudos to [Rafio](https://codeforces.com/profile/Rafio) for coming up with this one..:D
+    
 </details>
 </details>
