@@ -6,27 +6,25 @@
 
 ---
 
-### Hint 1
 <details>
-<summary>View Hint</summary>
+<summary>Hint 1</summary>
 Who is the last person in the queue to have a non-zero probability of winning?
 </details>
 
-### Hint 2
 <details>
-<summary>View Hint</summary>
+<summary>Hint 2</summary>
 For the i-th person in the queue to win, exactly how many previous players must be eliminated? In how many different configurations can these eliminations occur across the bridge?
 </details>
 
-### Hint 3
 <details>
-<summary>View Hint</summary>
+<summary>Hint 3</summary>
 What is the probability of one specific sequence of guesses occurring where the i-th person wins?
 </details>
 
 ---
 
-### Solution
+<details> 
+<summary>Solution</summary>
 
 For the $i$-th person to win, all $(i - 1)$ players that started before them must be eliminated. A player is eliminated when they step on a fragile panel.
 
@@ -52,10 +50,11 @@ $$i = \lfloor \frac{M}{2} \rfloor + 1$$
 However, it is not always possible to pick the $(\lfloor \frac{M}{2} \rfloor + 1)$-th position if the total number of players $N$ is less than $\lfloor \frac{M}{2} \rfloor + 1$. Because $\binom{M}{k}$ is strictly increasing for $k \le \lfloor \frac{M}{2} \rfloor$, if $N < \lfloor \frac{M}{2} \rfloor + 1$, the optimal choice is simply the last available person in the queue, which is $N$.
 
 Thus, the optimal position to choose is $\min(N, \lfloor \frac{M}{2} \rfloor + 1)$.
+</details>
 
 ---
-
-### Code (C++)
+<details>
+<summary> Code (C++)</summary>
 
 ```cpp
 #include <bits/stdc++.h>
@@ -75,3 +74,4 @@ int main() {
 
     return 0;
 }
+</details>
