@@ -11,7 +11,7 @@ Tag(s): Bitmasks
 Use these properties of XOR:
 
 - $a \oplus b = b \oplus a $
-- $a \oplus 0 = 0$
+- $a \oplus 0 = a$
 - $a \oplus a = 0$
 </details>
 
