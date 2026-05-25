@@ -6,8 +6,6 @@ Estimated Difficulty: 1400
 
 Tag(s): Constructive, Number Theory
 
-**Prerequisites:** Pigeonhole Principle, Basic Modular Arithmetic
-
 ### The Problem in a Nutshell
 We are given an integer $n$ and a digit $d$. Our goal is to find a positive number that is divisible by $n$, uses only the digit $d$ and $0$ and contains at most $n$ digits.
 
@@ -118,33 +116,40 @@ void solve(int tc)
     int n, d;
     cin >> n >> d;
     
-    int num = 0;
-    vector<int> rem(n, -1);
-    rem[0] = 0;
+    int R = 0;
+    // Maintain an array seen of size n, initialized to -1
+    vector<int> seen(n, -1);
     
+    // Loop i from 1 to n:
     for(int i = 1; i <= n; i++)
     {
-        num = (num * 10 % n + d) % n;
+        // Update the remainder
+        R = (R * 10 + d) % n;
         
-        if (rem[num] != -1)
+        // If R == 0: Our answer is i occurrences of d. Stop.
+        if (R == 0)
         {
-            string ans;
-            for(int j = 1; j <= i; j++)
-            {
-                ans.push_back(d + '0');
-            }
-            for(int j = 0; j < rem[num]; j++)
-            {
-                ans[j] = '0';
-            }
-            reverse(ans.begin(), ans.end());
+            string ans(i, d + '0');
             cout << ans << "\n";
             return;
         }
-        else
+        
+        // If seen[R] is already filled: 
+        if (seen[R] != -1)
         {
-            rem[num] = i;
+            // Let j = seen[R]. 
+            int j = seen[R];
+            
+            // Our answer is (i - j) occurrences of d, followed by j occurrences of 0. Stop.
+            string ans(i - j, d + '0');
+            ans.append(j, '0');
+            
+            cout << ans << "\n";
+            return;
         }
+        
+        // Otherwise, record the current length
+        seen[R] = i;
     }
 }
 
