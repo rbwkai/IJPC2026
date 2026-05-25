@@ -29,8 +29,10 @@ Two triangles are similar if their corresponding side lengths are proportional.
 
 Let the first triangle have sides:
 
-```math
+```markdown
+$$
 (a,b,c)
+$$
 
 and the second triangle have sides:
 
