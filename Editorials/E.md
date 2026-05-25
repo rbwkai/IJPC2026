@@ -2,7 +2,7 @@
 
 Problem Setter: [Mishkat Ahmed Khan](https://codeforces.com/profile/C01d)  
 
-Estimated Difficulty: 800  
+Estimated Difficulty: 900  
 
 Tag(s): Math, Sorting
 
