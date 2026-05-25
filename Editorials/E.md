@@ -29,48 +29,34 @@ Two triangles are similar if their corresponding side lengths are proportional.
 
 Let the first triangle have sides:
 
-\[
-(a,b,c)
-\]
+$(a,b,c)$
 
 and the second triangle have sides:
 
-$$
-(d,e,f)
-$$
+$(d,e,f)$
 
 Since the order of the sides is unknown, we first sort both triples in non-decreasing order.
 
 Suppose after sorting we get:
 
-$$
-x_1 \le x_2 \le x_3
-$$
+$x_1 \le x_2 \le x_3$
 
 and
 
-$$
-y_1 \le y_2 \le y_3
-$$
+$y_1 \le y_2 \le y_3$
 
 
 If the triangles are similar, then the ratios of corresponding sides must be equal:
 
-$$
-\frac{x_1}{y_1} = \frac{x_2}{y_2} = \frac{x_3}{y_3}
-$$
+$\frac{x_1}{y_1} = \frac{x_2}{y_2} = \frac{x_3}{y_3}$
 
 Instead of using floating point division (which may cause precision issues), we compare the ratios using cross multiplication:
 
-$$
-x_1 \times y_2 = y_1 \times x_2
-$$
+$x_1 \times y_2 = y_1 \times x_2$
 
 and
 
-$$
-x_2 \times y_3 = y_2 \times x_3
-$$
+$x_2 \times y_3 = y_2 \times x_3$
 
 If both conditions are true, the triangles are similar; otherwise, they are not.
 
@@ -133,39 +119,27 @@ Instead of sorting the side lengths, we can directly try every possible correspo
 
 Let the first triangle have sides:
 
-$$
-(a,b,c)
-$$
+$(a,b,c)$
 
 and the second triangle have sides:
 
-$$
-(d,e,f)
-$$
+$(d,e,f)$
 
 Two triangles are similar if there exists some arrangement of the second triangle’s sides such that:
 
-$$
-\frac{a}{x} = \frac{b}{y} = \frac{c}{z}
-$$
+$\frac{a}{x} = \frac{b}{y} = \frac{c}{z}$
 
 where
 
-$$
-(x,y,z)
-$$
+$(x,y,z)$
 
 is a permutation of
 
-$$
-(d,e,f)
-$$
+$(d,e,f)$
 
 Since a triangle has exactly:
 
-$$
-3! = 6
-$$
+$3! = 6$
 
 possible permutations, we can simply test all six arrangements.
 
@@ -173,17 +147,11 @@ For each permutation, we check whether the corresponding side ratios are equal.
 
 To avoid floating point precision issues, we compare ratios using cross multiplication:
 
-$$
-a \times y = b \times x
-$$
+$a \times y = b \times x$
 
-$$
-b \times z = c \times y
-$$
+$b \times z = c \times y$
 
-$$
-a \times z = c \times x
-$$
+$a \times z = c \times x$
 
 If all three conditions hold for any permutation, then the triangles are similar.
 
