@@ -1,5 +1,7 @@
 # IJPC 2026
 
+Problemset for Intra-IUT Junior Programming Contest 2026.
+
 ## Links
 
 Contest: https://codeforces.com/gym/106539
@@ -18,6 +20,7 @@ Contest: https://codeforces.com/gym/106539
 | [Fariya Ahmed](https://codeforces.com/profile/nazyalensky)                      | **Problem Setter**                      |
 | [Mahiul Kabir](https://www.linkedin.com/in/mahiulkabir/)                        | **Problem Setter**                      |
 | [Mishkat Ahmed Khan](https://codeforces.com/profile/C01d)                       | **Problem Setter**                      |
+
 ## Previous Editions
 
 2025 - https://github.com/ir-rafio/IJPC-2025-Problemset
