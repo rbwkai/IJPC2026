@@ -30,19 +30,19 @@ In $2D$, imagine a square instead of a cube. The question becomes:
 
 Draw the square and mark its center.
 
-![Cell 2D](./img/Cell-2D.png '2D Cell')
+![Cell 2D](./img/Cell-2D.png 'In 2D, the unit square contains 4 corner atoms and 1 center atom.')
 
 Now connect the center to one of the corners. The boundary between points closer to the center and points closer to that corner is the perpendicular bisector of that segment.
 
 Doing this for all four corners gives four bisectors.
 
-![Bisector 2D](./img/Bisector-2D.png '2D Bisector')
+![Bisector 2D](./img/Bisector-2D.png 'The bisector corresponding to each corner splits the 2D space into two half-spaces: one side is closer to the center, and the other side is closer to a vertex.')
 
 A useful observation appears immediately: each bisector intersects the square exactly at the midpoint of an edge.
 
 So the domain of the center is simply the diamond formed by joining the four edge midpoints.
 
-![Domain 2D](./img/Domain-2D.png '2D Domain')
+![Domain 2D](./img/Domain-2D.png 'The diagonal length of the blue domain is equal to the side length of the unit square.')
 
 If the side length of the unit square is $a$, the area of the domain, $\displaystyle A_{domain} = \frac{a^2}{2}$
 
@@ -305,7 +305,7 @@ int main()
 <details>
 <summary>Trivia</summary>
 
-The problem is taken from the final exam of [Assassination Classroom, Season 2, Episode 12](https://www.youtube.com/watch?v=IsTMsq5EVbU), introduced to the setter by [Rafio](https://codeforces.com/profile/Rafio).
+The problem is taken from the final exam of [Assassination Classroom, Season 2, Episode 12](https://www.youtube.com/watch?v=IsTMsq5EVbU).
 
 This is a beautiful episode where a math problem is connected directly to the themes of a story. Although Assassination Classroom is a quite an absurd anime in general, the context of this problem can be easily explained.
 
