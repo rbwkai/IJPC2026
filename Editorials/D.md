@@ -30,11 +30,17 @@ Notice that regardless of who wins or dies, exactly $M$ panel guesses will be ma
 
 For the $i$-th person to be the winner, exactly $(i - 1)$ wrong guesses must be made by their predecessors, and the remaining $M - (i - 1)$ guesses must be correct. The number of ways to choose which $(i - 1)$ steps out of the $M$ steps result in a wrong guess is given by the binomial coefficient $\displaystyle \binom{M}{i - 1}$.
 
-Therefore, the probability of the $i$-th person winning is $\displaystyle P(i) = \frac{\binom{M}{i - 1}}{2^M}$.
+Therefore, the probability of the $i$-th person winning is 
+
+$$P(i) = \frac{\binom{M}{i - 1}}{2^M}$$
 
 From this equation, it is evident that the winning chance follows a binomial distribution. Because $2^M$ is constant for a given bridge, the probability depends entirely on the value of $\displaystyle \binom{M}{i - 1}$.
 
-To maximize the winning probability, we need to maximize $\displaystyle \binom{M}{i - 1}$. The binomial coefficient $\displaystyle \binom{n}{k}$ reaches its maximum when $\displaystyle k = \lfloor \frac{n}{2} \rfloor$. Therefore, we want $\displaystyle i - 1 = \lfloor \frac{M}{2} \rfloor$, so $\displaystyle i = \lfloor \frac{M}{2} \rfloor + 1$.
+To maximize the winning probability, we need to maximize $\displaystyle \binom{M}{i - 1}$. The binomial coefficient $\displaystyle \binom{n}{k}$ reaches its maximum when $\displaystyle k = \lfloor \frac{n}{2} \rfloor$.
+
+Therefore, we want:
+
+$$i - 1 = \lfloor \frac{M}{2} \rfloor \implies i = \lfloor \frac{M}{2} \rfloor + 1$$
 
 > **Note:** Because $\displaystyle \binom{n}{k} = \binom{n}{n - k}$, both the floor and ceiling of $\displaystyle \frac{M}{2}$ yield the same maximum probability. So picking either is fine.
 
