@@ -26,7 +26,7 @@ What is the probability of one specific sequence of guesses occurring where the 
 
 For the $i$-th person to win, all $(i - 1)$ players that started before them must be eliminated. A player is eliminated when they step on a fragile panel.
 
-Notice that regardless of who wins or dies, exactly $M$ panel guesses will be made in total across the bridge (one for each of the $M$ steps). Since each guess has a $50\%$ (or $\displaystyle \frac{1}{2}$) chance of being correct or incorrect, any specific sequence of $M$ guesses has a probability of $\displaystyle \frac{1}{2^M}$.
+Notice that regardless of who wins or dies, exactly $M$ panel guesses will be made in total across the bridge (one for each of the $M$ steps). Since each guess has a $50%$ (or $\displaystyle \frac{1}{2}$) chance of being correct or incorrect, any specific sequence of $M$ guesses has a probability of $\displaystyle \frac{1}{2^M}$.
 
 For the $i$-th person to be the winner, exactly $(i - 1)$ wrong guesses must be made by their predecessors, and the remaining $M - (i - 1)$ guesses must be correct. The number of ways to choose which $(i - 1)$ steps out of the $M$ steps result in a wrong guess is given by the binomial coefficient $\displaystyle \binom{M}{i - 1}$.
 
