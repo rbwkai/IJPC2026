@@ -21,4 +21,5 @@ Contest: https://codeforces.com/gym/106539
 ## Previous Editions
 
 2025 - https://github.com/ir-rafio/IJPC-2025-Problemset
+
 2024 - https://github.com/ir-rafio/IJPC-2024-Problemset
