@@ -196,7 +196,61 @@ Finally, $\displaystyle \boxed{V_{domain} = a^3 - 8 \times \frac{6 a^3}{128} - 2
 <details>
 <summary>Alternate Solution</summary>
 
-Alternate Solution
+Unlike the first solution, don't ignore the details. Think about the atoms and the lattice, and think outside the box (literally)!
+
+Notice that A center atom has $8$ neighboring corner atoms, all at the same distance. But the same is also true for every corner atom.
+
+**So whether an atom appears as a 'center atom' or a 'corner atom' depends only on which atom you are focusing at.**
+
+This means every atom has its own domain, and every point in the lattice belongs to exactly one atom's domain (unless it lies on a border between multiple domains).
+
+Because all atoms are symmetric, every domain has the same size.
+
+Let that common area or volume be $\displaystyle d$.
+
+---
+
+Now start with the $2D$ version.
+
+Each unit square contains:
+
+- one full center atom,
+- and four corner atoms.
+
+Each corner atom is shared equally between four adjacent squares.
+
+So inside one square, the corner atoms contribute $\displaystyle 4\times\frac d4$.
+
+Adding the center atom gives $\displaystyle d+4\cdot\frac d4=a^2$.
+
+$\displaystyle \implies d+d=a^2$
+
+$\displaystyle \implies 2d=a^2$
+
+$\displaystyle \therefore d=\frac{a^2}{2}$.
+
+So in $2D$, the domain of any atom occupies exactly half the square.
+
+---
+
+Unlike the previous solutions, this logic translates seamlessly to $3D$!
+
+Each unit cube contains:
+
+- one full center atom,
+- and eight corner atoms.
+
+Each corner atom is shared equally between eight neighboring cubes.
+
+So inside one cube, the corner atoms contribute $\displaystyle 8\times\frac d8$.
+
+Adding the center atom gives $\displaystyle d+8\cdot\frac d8=a^3$.
+
+$\displaystyle \implies d+d=a^3$
+
+$\displaystyle \implies 2d=a^3$
+
+$\displaystyle \boxed{\therefore d=\frac{a^3}{2}}$.
 
 </details>
 
@@ -253,7 +307,7 @@ int main()
 <details>
 <summary>Trivia</summary>
 
-The problem is taken from the final exam of [Assassination Classroom, Season 2, Episode 12](https://www.youtube.com/watch?v=IsTMsq5EVbU).
+The problem is taken from the final exam of [Assassination Classroom, Season 2, Episode 12](https://www.youtube.com/watch?v=IsTMsq5EVbU), introduced to the setter by [Rafio](https://codeforces.com/profile/Rafio).
 
 This is a beautiful episode where a math problem is connected directly to the themes of a story. Although Assassination Classroom is a quite an absurd anime in general, the context of this problem can be easily explained.
 
