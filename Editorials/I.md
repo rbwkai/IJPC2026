@@ -206,6 +206,8 @@ int main()
 
 </details>
 
+---
+
 However, there is a problem! From each configuration of the building, you can press $4$ different switches. Even if you limit yourself to at most $15$ switch presses, the total number of possible sequences is around $4^{15}$, which is greater than one billion. It is not feasible to try all of them within time limit for $1$ test case, let alone $30$.
 
 To resolve this issue, you can use a clever technique called **"Meet in the Middle"**. The observation is simple. If there exists a sequence of switch presses that transforms the initial configuration into the target configuration in at most $15$ moves, then there must be some intermediate configuration that can be reached from the start in at most $8$ moves and also reached from the target in at most $7$ moves. In other words, the two sets of reachable configurations must have at least one configuration in common.
