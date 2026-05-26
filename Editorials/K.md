@@ -198,7 +198,7 @@ Finally, $\displaystyle \boxed{V_{domain} = a^3 - 8 \times \frac{6 a^3}{128} - 2
 
 Unlike the first solution, don't ignore the details. Think about the atoms and the lattice, and think outside the box (literally)!
 
-Notice that A center atom has $8$ neighboring corner atoms, all at the same distance. But the same is also true for every corner atom.
+Notice that a center atom has $8$ neighboring atoms, all at the same distance. But the same is also true for every corner atom.
 
 **So whether an atom appears as a 'center atom' or a 'corner atom' depends only on which atom you are focusing at.**
 
@@ -217,19 +217,17 @@ Each unit square contains:
 - one full center atom,
 - and four corner atoms.
 
-Each corner atom is shared equally between four adjacent squares.
+Each corner atom is shared equally between four adjacent squares. So inside one square, one corner atom contributes $\displaystyle \frac{d}{4}$.
 
-So inside one square, the corner atoms contribute $\displaystyle 4\times\frac d4$.
+The unit square consists of one fourth of the domains of four corner atoms and the entire domain of the center atom.
 
-Adding the center atom gives $\displaystyle d+4\cdot\frac d4=a^2$.
+Formally, $\displaystyle d + 4 \times \frac{d}{4} = a^2$
 
-$\displaystyle \implies d+d=a^2$
+$\displaystyle \implies d + d = a^2$
 
-$\displaystyle \implies 2d=a^2$
+$\displaystyle \implies 2d = a^2$
 
-$\displaystyle \therefore d=\frac{a^2}{2}$.
-
-So in $2D$, the domain of any atom occupies exactly half the square.
+$\displaystyle \therefore d = \frac{a^2}{2}$.
 
 ---
 
@@ -240,15 +238,15 @@ Each unit cube contains:
 - one full center atom,
 - and eight corner atoms.
 
-Each corner atom is shared equally between eight neighboring cubes.
+Each corner atom is shared equally between eight neighboring cubes. So inside one cube, one corner atom contributes $\displaystyle \frac{d}{8}$.
 
-So inside one cube, the corner atoms contribute $\displaystyle 8\times\frac d8$.
+The unit cube consists of one eigth of the domains of eight corner atoms and the entire domain of the center atom.
 
-Adding the center atom gives $\displaystyle d+8\cdot\frac d8=a^3$.
+Formally, $\displaystyle d + 8 \times \frac{d}{8} = a^3$
 
-$\displaystyle \implies d+d=a^3$
+$\displaystyle \implies d + d = a^3$
 
-$\displaystyle \implies 2d=a^3$
+$\displaystyle \implies 2d = a^3$
 
 $\displaystyle \boxed{\therefore d=\frac{a^3}{2}}$.
 
