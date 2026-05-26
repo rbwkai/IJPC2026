@@ -37,17 +37,17 @@ The repeating section runs from index $m-1$ through $n$, so it contains $K=n-m+2
 - If $R = 0$: all elements form complete blocks, so they cancel out. The final answer is the XOR of the first $m-2$ elements:  
   $\displaystyle \bigoplus_{i=1}^{m-2} a_i$
 
-  ![R0](./img/XORnacci-Diagram-0.png "R = 0")
+  ![R0](./img/XORnacci-Diagram-0.png 'R = 0')
 
 - If $R = 1$: one extra element $a_{m-1}$ remains. The final answer is  
   $\displaystyle \left(\bigoplus_{i=1}^{m-2} a_i\right)\oplus a_{m-1}=\bigoplus_{i=1}^{m-1} a_i$
 
-  ![R1](./img/XORnacci-Diagram-1.png "R = 1")
+  ![R1](./img/XORnacci-Diagram-1.png 'R = 1')
 
 - If $R = 2$: two extra elements $a_{m-1}$ and $a_m$ remain. The final answer is  
   $\displaystyle \left(\bigoplus_{i=1}^{m-2} a_i\right)\oplus a_{m-1}\oplus a_m=\bigoplus_{i=1}^{m} a_i$
-  
-  ![R2](./img/XORnacci-Diagram-2.png "R = 2")
+
+  ![R2](./img/XORnacci-Diagram-2.png 'R = 2')
 
 <details>
 <summary>Code</summary>

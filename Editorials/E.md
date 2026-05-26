@@ -1,8 +1,8 @@
 # AutoCAD Mayhem
 
-Problem Setter: [Mishkat Ahmed Khan](https://codeforces.com/profile/C01d)  
+Problem Setter: [Mishkat Ahmed Khan](https://codeforces.com/profile/C01d)
 
-Estimated Difficulty: 900  
+Estimated Difficulty: 900
 
 Tag(s): Math, Sorting
 
@@ -45,7 +45,6 @@ and
 
 $y_1 \le y_2 \le y_3$
 
-
 If the triangles are similar, then the ratios of corresponding sides must be equal:
 
 $\frac{x_1}{y_1} = \frac{x_2}{y_2} = \frac{x_3}{y_3}$
@@ -73,18 +72,21 @@ using namespace std;
 #define ll long long
 
 void solve() {
-    vector<ll> labib(3);
-    for(ll i=0; i<3; i++) cin >> labib[i];
+    ll a, b, c;
+    cin >> a >> b >> c;
 
-    vector<ll> jehad(3);
-    for(ll i=0; i<3; i++) cin >> jehad[i];
+    ll d, e, f;
+    cin >> d >> e >> f;
 
-    sort(labib.begin(), labib.end());
-    sort(jehad.begin(), jehad.end());
+    vector<ll> firstTriangle = {a, b, c};
+    vector<ll> secondTriangle = {d, e, f};
 
-    if(labib[0] * jehad[1] == labib[1] * jehad[0] and
-        labib[1] * jehad[2] == labib[2] * jehad[1] and
-        labib[0] * jehad[2] == labib[2] * jehad[0]) {
+    sort(firstTriangle.begin(), firstTriangle.end());
+    sort(secondTriangle.begin(), secondTriangle.end());
+
+    if(firstTriangle[0] * secondTriangle[1] == firstTriangle[1] * secondTriangle[0] and
+        firstTriangle[1] * secondTriangle[2] == firstTriangle[2] * secondTriangle[1] and
+        firstTriangle[0] * secondTriangle[2] == firstTriangle[2] * secondTriangle[0]) {
         cout << "YES\n";
         return;
     }
@@ -211,3 +213,5 @@ int main() {
     return 0;
 }
 ```
+
+</details>
