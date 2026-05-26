@@ -29,6 +29,8 @@ Since $24 = 8 \times 3$, we need $x^2 - 1$ to be divisible by both $8$ and $3$. 
 
 $x^2 - 1 = (x - 1)(x + 1)$.
 
+---
+
 First, consider divisibility by $3$.
 
 The numbers $x - 1$, $x$, and $x + 1$ are three consecutive integers. Among any three consecutive integers, exactly one is divisible by $3$.
@@ -39,6 +41,8 @@ If $x$ is not divisible by $3$, then one of $x - 1$ and $x + 1$ must be divisibl
 
 Therefore, $x^2 - 1$ is divisible by $3$ if and only if $x$ is not divisible by $3$.
 
+---
+
 Now, consider divisibility by $8 = 2^3$.
 
 If $x$ is even, then both $x - 1$ and $x + 1$ are odd. Their product is odd, so it is not even divisible by $2$.
@@ -47,9 +51,13 @@ If $x$ is odd, then both $x - 1$ and $x + 1$ are even. They are two consecutive 
 
 Therefore, $x^2 - 1$ is divisible by $8$ if and only if $x$ is odd.
 
+---
+
 Combining the two observations, $x^2 - 1$ is divisible by $24$ if and only if $x$ is divisible by neither $2$ nor $3$.
 
 So the problem reduces to counting how many integers in the range $[1, N]$ are not divisible by $2$ and not divisible by $3$. You can solve this using the **inclusion-exclusion principle**.
+
+---
 
 Initially, consider all $N$ integers from $1$ to $N$ as possible impostor IDs.
 
@@ -122,6 +130,8 @@ The value of $x^2 - 1$ modulo $24$ depends only on $x$ modulo $24$. So, if an ID
 Here is a simplified proof: Since $x + 24 \equiv x \pmod {24}$, we also have $(x + 24)^2 \equiv x^2 \pmod {24}$. Subtracting $1$ from both sides gives $(x + 24)^2 - 1 \equiv x^2 - 1 \pmod {24}$. Therefore, $x^2 - 1$ is divisible by $24$ if and only if $(x + 24)^2 - 1$ is divisible by $24$.
 
 Therefore, the pattern of impostor IDs repeats every $24$ numbers.
+
+---
 
 Since $24$ is small, you can first check all IDs from $1$ to $24$ and mark which remainders are impostors. Then split the range $[1, N]$ into full blocks of length $24$ and one remaining suffix.
 
