@@ -1,6 +1,6 @@
 # Iris Out
 
-Problem Setter: [Rafio](https://codeforces.com/profile/Rafio)
+Problem Setter: [Irfanur Rahman Rafio](https://codeforces.com/profile/Rafio)
 
 Estimated Difficulty: 800
 
