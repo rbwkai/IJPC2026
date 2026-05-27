@@ -214,7 +214,7 @@ Now start with the $2D$ version.
 
 Each unit square contains:
 
-- one full center atom,
+- one center atom,
 - and four corner atoms.
 
 Each corner atom is shared equally between four adjacent squares. So inside one square, one corner atom contributes $\displaystyle \frac{d}{4}$.
@@ -235,7 +235,7 @@ Unlike the previous solutions, this logic translates seamlessly to $3D$!
 
 Each unit cube contains:
 
-- one full center atom,
+- one center atom,
 - and eight corner atoms.
 
 Each corner atom is shared equally between eight neighboring cubes. So inside one cube, one corner atom contributes $\displaystyle \frac{d}{8}$.
