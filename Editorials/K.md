@@ -163,7 +163,7 @@ Start with the hexagonal pyramid.
 
 Notice that it's base is a regular hexagon where the length of each side is $\displaystyle \sqrt{\left(\frac{a}{4}\right)^2 + \left(\frac{a}{4}\right)^2} = \frac{a}{\sqrt{8}}$.
 
-Area of the base of the pyramid $\displaystyle 6 \times \left[\frac{\sqrt{3}}{4} \times \left(\frac{a}{\sqrt{8}}\right)^2 \right] = \frac{6 \sqrt{3} a^2}{32}$
+Area of the base of the pyramid $\displaystyle = 6 \times \left[\frac{\sqrt{3}}{4} \times \left(\frac{a}{\sqrt{8}}\right)^2 \right] = \frac{6 \sqrt{3} a^2}{32}$
 
 Now, the apex is the corner itself.  
 The base lies on the bisector plane, which is halfway between the center and that corner.  
