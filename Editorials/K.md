@@ -108,7 +108,7 @@ You can go to the 2D version of the problem and solve it using the same techniqu
 
 Area of unit square $= a^2$
 
-Area of each triangle in corner, $\displaystyle A_{triangle} = \frac{1}{2} \times \frac{a}{2} \times \frac{a}{2} = \times \frac{a^2}{8}$
+Area of each triangle in corner, $\displaystyle A_{triangle} = \frac{1}{2} \times \frac{a}{2} \times \frac{a}{2} = \frac{a^2}{8}$
 
 There are $4$ triangles for the $4$ vertices of the square.
 
