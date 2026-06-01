@@ -37,9 +37,7 @@
 | J | [The Grand Fleet's Logbook](#problem-j) |
 | K | [Power of Friendship](#problem-k) |
 
----
-
-# Tutorials
+## Tutorials
 
 <a id="problem-a"></a>
 
