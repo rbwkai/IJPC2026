@@ -80,24 +80,53 @@ def write_header(out, contest):
 
         out.write("\n")
 
+def problem_anchor(pid: str) -> str:
+    return f"problem-{pid.lower()}"
+
+def write_toc(out, problems):
     out.write("## Problems\n\n")
-    out.write("| ID | Problem |\n")
-    out.write("|----|---------|\n")
+    out.write("| Problem ID | Problem Title |\n")
+    out.write("|------------|---------------|\n")
 
-
-def write_problem_table(out, problems):
     for p in problems:
-        out.write(f"| {p['id']} | {p['name']} |\n")
+        pid = p["id"].strip()
+        name = p["name"].strip()
+
+        anchor = problem_anchor(pid)
+        out.write(f"| {pid} | [{name}](#{anchor}) |\n")
 
     out.write("\n---\n\n")
+
+
+def write_tutorials_header(out):
     out.write("# Tutorials\n\n")
 
+def write_tutorial_item(out, problem_id, problem_name, content):
+    anchor = problem_anchor(problem_id)
 
-def write_tutorial(out, problem_id, problem_name, content):
+    out.write(f'<a id="{anchor}"></a>\n\n')
+
     out.write("<details>\n")
     out.write(f"<summary><strong>{problem_id}. {problem_name}</strong></summary>\n\n")
     out.write(content.rstrip())
     out.write("\n\n</details>\n\n")
+
+def write_tutorials(out, problems, tutorials_dir):
+    write_tutorials_header(out)
+
+    for p in problems:
+        pid = p["id"].strip()
+        name = p["name"].strip()
+
+        tutorial_file = tutorials_dir / f"{pid}.md"
+
+        if tutorial_file.exists():
+            content = tutorial_file.read_text(encoding="utf-8")
+            content = fix_links(content, tutorial_file)
+        else:
+            content = "_Tutorial not available._"
+
+        write_tutorial_item(out, pid, name, content)
 
 
 
@@ -107,20 +136,8 @@ def main():
 
     with OUTPUT_FILE.open("w", encoding="utf-8") as out:
         write_header(out, contest)
-
-        for p in problems:
-            pid = p["id"].strip()
-            name = p["name"].strip()
-
-            tutorial_file = TUTORIALS_DIR / f"{pid}.md"
-
-            if tutorial_file.exists():
-                content = tutorial_file.read_text(encoding="utf-8")
-                content = fix_links(content, tutorial_file)
-            else:
-                content = "_Tutorial not available._"
-
-            write_tutorial(out, pid, name, content)
+        write_toc(out, problems)
+        write_tutorials(out, problems, TUTORIALS_DIR)
 
     print(f"Generated {OUTPUT_FILE}")
 
