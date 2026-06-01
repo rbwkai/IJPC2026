@@ -23,8 +23,26 @@
 
 ## Problems
 
-| ID | Problem |
-|----|---------|
+| Problem ID | Problem Title |
+|------------|---------------|
+| A | [Glorious Batch-24!](#problem-a) |
+| B | [XORnacci](#problem-b) |
+| C | [Strong Password](#problem-c) |
+| D | [Glass Bridge](#problem-d) |
+| E | [AutoCAD Mayhem](#problem-e) |
+| F | [Still a Group Project??](#problem-f) |
+| G | [Moushi Is In Trouble](#problem-g) |
+| H | [Unf-AI-r Task](#problem-h) |
+| I | [Iris Out](#problem-i) |
+| J | [The Grand Fleet's Logbook](#problem-j) |
+| K | [Power of Friendship](#problem-k) |
+
+---
+
+# Tutorials
+
+<a id="problem-a"></a>
+
 <details>
 <summary><strong>A. Glorious Batch-24!</strong></summary>
 
@@ -230,6 +248,8 @@ int main()
 
 </details>
 
+<a id="problem-b"></a>
+
 <details>
 <summary><strong>B. XORnacci</strong></summary>
 
@@ -339,6 +359,8 @@ int main()
 </details>
 
 </details>
+
+<a id="problem-c"></a>
 
 <details>
 <summary><strong>C. Strong Password</strong></summary>
@@ -610,6 +632,8 @@ int main()
 
 </details>
 
+<a id="problem-d"></a>
+
 <details>
 <summary><strong>D. Glass Bridge</strong></summary>
 
@@ -691,6 +715,8 @@ int main() {
 </details>
 
 </details>
+
+<a id="problem-e"></a>
 
 <details>
 <summary><strong>E. AutoCAD Mayhem</strong></summary>
@@ -913,6 +939,8 @@ int main() {
 
 </details>
 
+<a id="problem-f"></a>
+
 <details>
 <summary><strong>F. Still a Group Project??</strong></summary>
 
@@ -1086,6 +1114,8 @@ int main()
 
 </details>
 
+<a id="problem-g"></a>
+
 <details>
 <summary><strong>G. Moushi Is In Trouble</strong></summary>
 
@@ -1189,6 +1219,8 @@ int main()
 
 </details>
 
+<a id="problem-h"></a>
+
 <details>
 <summary><strong>H. Unf-AI-r Task</strong></summary>
 
@@ -1248,6 +1280,8 @@ int main()
 </details>
 
 </details>
+
+<a id="problem-i"></a>
 
 <details>
 <summary><strong>I. Iris Out</strong></summary>
@@ -1719,6 +1753,8 @@ int main()
 </details>
 
 </details>
+
+<a id="problem-j"></a>
 
 <details>
 <summary><strong>J. The Grand Fleet's Logbook</strong></summary>
@@ -2197,6 +2233,8 @@ int main() {
 </details>
 
 </details>
+
+<a id="problem-k"></a>
 
 <details>
 <summary><strong>K. Power of Friendship</strong></summary>
