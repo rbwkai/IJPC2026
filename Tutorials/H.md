@@ -1,5 +1,3 @@
-# Unf-AI-r Task
-
 Problem Setter: [Reaz Hassan Joarder](https://codeforces.com/profile/ssshanto)
 
 Tag(s): Giveaway

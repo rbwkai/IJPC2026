@@ -1,5 +1,3 @@
-# Glorious Batch-24!
-
 Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
 
 Estimated Difficulty: 900

@@ -1,5 +1,3 @@
-# Moushi Is In Trouble
-
 Problem Setter: [Fariya Ahmed](https://codeforces.com/profile/fariyapracticekorena)
 
 Estimated Difficulty: 900

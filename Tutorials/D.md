@@ -1,5 +1,3 @@
-# Glass Bridge
-
 Problem Setter: [Nayeem Hossain Ahad](https://codeforces.com/profile/flying_saucer)
 
 Estimated Difficulty: 1400
@@ -30,7 +28,7 @@ Notice that regardless of who wins or dies, exactly $M$ panel guesses will be ma
 
 For the $i$-th person to be the winner, exactly $(i - 1)$ wrong guesses must be made by their predecessors, and the remaining $M - (i - 1)$ guesses must be correct. The number of ways to choose which $(i - 1)$ steps out of the $M$ steps result in a wrong guess is given by the binomial coefficient $\displaystyle \binom{M}{i - 1}$.
 
-Therefore, the probability of the $i$-th person winning is 
+Therefore, the probability of the $i$-th person winning is
 
 $$P(i) = \frac{\binom{M}{i - 1}}{2^M}$$
 

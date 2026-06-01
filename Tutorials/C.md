@@ -1,5 +1,3 @@
-# Strong Password
-
 Problem Setter: [Md. Wasi Ul Habib](https://codeforces.com/profile/CodingPariNaa)
 
 Estimated Difficulty: 1400

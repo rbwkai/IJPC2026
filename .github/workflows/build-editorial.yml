@@ -1,0 +1,40 @@
+name: Build Editorial
+
+on:
+  push:
+    paths:
+      - 'Tutorials/**'
+      - 'problems.csv'
+      - 'contest.json'
+      - 'build_editorial.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate Editorial.md
+        run: python build_editorial.py
+
+      - name: Commit generated file
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add Editorial.md
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-generate Editorial.md"
+            git push
+          fi

@@ -1,5 +1,3 @@
-# Iris Out
-
 Problem Setter: [Irfanur Rahman Rafio](https://codeforces.com/profile/Rafio)
 
 Estimated Difficulty: 800

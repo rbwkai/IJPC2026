@@ -1,5 +1,3 @@
-# The Grand Fleet’s Logbook
-
 Problem Setter: [Saom Bin Khaled](https://codeforces.com/profile/greenbinjack)
 
 Estimated Difficulty: 1400

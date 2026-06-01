@@ -1,5 +1,3 @@
-# XORnacci
-
 Problem Setter: [Jannatul Fardus Rakhi](https://codeforces.com/profile/sectumsemprra)
 
 Estimated Difficulty: 1200

@@ -1,5 +1,3 @@
-# AutoCAD Mayhem
-
 Problem Setter: [Mishkat Ahmed Khan](https://codeforces.com/profile/C01d)
 
 Estimated Difficulty: 900

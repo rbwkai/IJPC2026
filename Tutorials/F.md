@@ -1,5 +1,3 @@
-# Still a Group Project??
-
 Problem Setter: [MD. Mahiul Kabir](https://codeforces.com/profile/rbwkai)
 
 Estimated Difficulty: 1200

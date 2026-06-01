@@ -1,5 +1,3 @@
-# Power of Friendship
-
 Problem Setter: [Syed Rifat Raiyan](https://codeforces.com/profile/Starscream-11813)
 
 Estimated Difficulty: 1300
