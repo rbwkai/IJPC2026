@@ -135,3 +135,130 @@ int main()
 
 </details>
 </details>
+
+
+
+<details>
+<summary>Alternative Solution</summary>
+
+If the constraints were extremely low, a natural approach would be to brute-force the problem. We could have generated and checked all possible string combinations of the allowed characters, checking all the numbers like $d$, $0$, $d0$, $dd$, $00$, $0d$, and so on, filtering out those with leading zeros and checking if they are divisible by $n$.
+
+However, this is not an option anymore. The number of combinations grows exponentially ($2^L$ for a string of length $L$), meaning for constraints like $n \le 10^5$, a brute-force approach would immediately result in a **Time Limit Exceeded (TLE)** error.
+
+What we can do instead is optimize this process by realizing we do not need to track the massive numbers themselves. We only care about their remainders when divided by $n$. 
+
+Since there are exactly $n$ possible remainders ($0$ to $n-1$), we can treat these remainders as states in a graph and traverse them using **Breadth-First Search (BFS)**. From any current state with remainder $R$, appending a new digit transitions us to a new state. The mathematical transitions are strictly:
+
+* **Appending 0:** The new remainder becomes $(R \times 10) \bmod n$.
+* **Appending d:** The new remainder becomes $(R \times 10 + d) \bmod n$.
+
+By using BFS, we guarantee that the first time we hit the target state (remainder $0$), we have found the shortest possible valid number.
+
+#### Implementation Steps
+
+1.  **Initialize BFS:** Start a queue and push the initial valid remainder: $d \bmod n$. *(We cannot start with `0` because leading zeros are not allowed).*
+2.  **Track States:** Use a `parent` array to keep track of the visited states to avoid infinite loops and redundant checks. This array will also store the preceding state so we can retrace our path.
+3.  **Track Digits:** Use another array `digit` to remember which character (`0` or `d`) was appended to reach the current remainder.
+4.  **Backtrack:** Once we pop a state where $R=0$, we stop the BFS and backtrack through the `parent` array to construct our final answer string.
+
+* **Time Complexity:** $\mathcal{O}(n)$ because we visit at most $n$ states.
+* **Space Complexity:** $\mathcal{O}(n)$ to store the queue and tracking arrays.
+  
+<details>
+<Summary>Code</Summary>
+    
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0)
+using LL = long long;
+
+void pre()
+{
+    fastio;
+}
+
+void solve(int tc)
+{
+    int n, d;
+    cin >> n >> d;
+
+    // Base case: if the single digit 'd' is already divisible by 'n'
+    if (d % n == 0)
+    {
+        cout << d << '\n';
+        return;
+    }
+
+    vector<int> parent(n, -1);
+    vector<char> digit(n, 0);
+    queue<int> q;
+
+    int start_R = d % n;
+    q.push(start_R);
+    parent[start_R] = -2; // Let's use -2 to mark the starting point
+    digit[start_R] = d + '0';
+
+    while (!q.empty())
+    {
+        int R = q.front();
+        q.pop();
+
+        if (R == 0) break; // We found a number divisible by n!
+
+        // Option 1: Let's append a '0'
+        int next_R1 = (R * 10) % n;
+        if (parent[next_R1] == -1) // If we haven't seen this remainder yet
+        {
+            parent[next_R1] = R;
+            digit[next_R1] = '0';
+            q.push(next_R1);
+        }
+
+        // Option 2: Let's append a 'd'
+        int next_R2 = (R * 10 + d) % n;
+        if (parent[next_R2] == -1) // If we haven't seen this remainder yet
+        {
+            parent[next_R2] = R;
+            digit[next_R2] = d + '0';
+            q.push(next_R2);
+        }
+    }
+
+    // We will build the final string by walking backward from remainder 0
+    if (parent[0] != -1)
+    {
+        string ans = "";
+        int curr = 0;
+        
+        while (curr != -2) // We must stop when we hit the starting point
+        {
+            ans += digit[curr];
+            curr = parent[curr];
+        }
+        
+        // Since we built the string backward, we must flip it before printing
+        reverse(ans.begin(), ans.end());
+        cout << ans;
+    }
+}
+
+int main()
+{
+    pre();
+
+    int tc, tt = 1;
+    cin >> tt;
+
+    for(tc = 1; tc <= tt; tc++)
+    {
+        solve(tc);
+        cout << '\n';
+    }
+
+    return 0;
+}
+```
+</details>
+</details>

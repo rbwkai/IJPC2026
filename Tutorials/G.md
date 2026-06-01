@@ -21,18 +21,19 @@ How does the parity of the base affect the parity of multi-digit numbers?
 <details>
 <summary>Hint 3</summary>
 
-Take all the numbers from $1_9$ to $25_9$ and check which numbers are even. Then take some random base-$9$ numbers and test whether they are odd or even. Try to notice a pattern, and then try to prove whether it will always work.
+Take all the numbers from $1_9$ to $25_9$ and check which numbers are even. Then take some random $9$-based numbers and test whether they are odd or even. Try to notice a pattern, and then try to prove whether it will always work.
 
 </details>
 
 <details>
 <summary>Solution</summary>
 
-Let the base-$9$ number be $X = a_{n-1}a_{n-2}\dots a_1a_0$. Its decimal value is $\displaystyle\sum_{i=0}^{n-1} a_i \times 9^i$.
+Let the $9$-based number be $X = a_{n-1}a_{n-2}\dots a_1a_0$. Its decimal value is  
+$\displaystyle\sum_{i=0}^{n-1} a_i \times 9^i = a_0 \times 9^0 + a_1 \times 9^1 + \dots + a_{n-1} \times 9^{n-1}$.
 
-Since $9$ is odd, every power of $9$ is also odd. Multiplying a digit by an odd number does not change its parity. Therefore, the parity of $X$ is the same as the parity of $\displaystyle\sum_{i=0}^{n-1} a_i$.
+Since $9$ is odd, every power of $9$ is also odd. Multiplying a digit by an odd number does not change its parity. Therefore, the parity of $X$ is the same as the parity of $\displaystyle\sum_{i=0}^{n-1} a_i = a_0 + a_1 + \dots + a_{n-1}$.
 
-So a base-$9$ number is:
+So a $9$-based number is:
 
 - **even** if the sum of its digits is even
 - **odd** if the sum of its digits is odd

@@ -106,7 +106,7 @@ You can go to the 2D version of the problem and solve it using the same techniqu
 
 Area of unit square $= a^2$
 
-Area of each triangle in corner, $\displaystyle A_{triangle} = \frac{1}{2} \times \frac{a}{2} \times \frac{a}{2} = \times \frac{a^2}{8}$
+Area of each triangle in corner, $\displaystyle A_{triangle} = \frac{1}{2} \times \frac{a}{2} \times \frac{a}{2} = \frac{a^2}{8}$
 
 There are $4$ triangles for the $4$ vertices of the square.
 
@@ -161,7 +161,7 @@ Start with the hexagonal pyramid.
 
 Notice that it's base is a regular hexagon where the length of each side is $\displaystyle \sqrt{\left(\frac{a}{4}\right)^2 + \left(\frac{a}{4}\right)^2} = \frac{a}{\sqrt{8}}$.
 
-Area of the base of the pyramid $\displaystyle 6 \times \left[\frac{\sqrt{3}}{4} \times \left(\frac{a}{\sqrt{8}}\right)^2 \right] = \frac{6 \sqrt{3} a^2}{32}$
+Area of the base of the pyramid $\displaystyle = 6 \times \left[\frac{\sqrt{3}}{4} \times \left(\frac{a}{\sqrt{8}}\right)^2 \right] = \frac{6 \sqrt{3} a^2}{32}$
 
 Now, the apex is the corner itself.  
 The base lies on the bisector plane, which is halfway between the center and that corner.  
@@ -212,7 +212,7 @@ Now start with the $2D$ version.
 
 Each unit square contains:
 
-- one full center atom,
+- one center atom,
 - and four corner atoms.
 
 Each corner atom is shared equally between four adjacent squares. So inside one square, one corner atom contributes $\displaystyle \frac{d}{4}$.
@@ -233,7 +233,7 @@ Unlike the previous solutions, this logic translates seamlessly to $3D$!
 
 Each unit cube contains:
 
-- one full center atom,
+- one center atom,
 - and eight corner atoms.
 
 Each corner atom is shared equally between eight neighboring cubes. So inside one cube, one corner atom contributes $\displaystyle \frac{d}{8}$.
