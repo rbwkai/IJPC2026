@@ -95,11 +95,10 @@ def write_toc(out, problems):
         anchor = problem_anchor(pid)
         out.write(f"| {pid} | [{name}](#{anchor}) |\n")
 
-    out.write("\n---\n\n")
-
+    out.write("\n")
 
 def write_tutorials_header(out):
-    out.write("# Tutorials\n\n")
+    out.write("## Tutorials\n\n")
 
 def write_tutorial_item(out, problem_id, problem_name, content):
     anchor = problem_anchor(problem_id)
